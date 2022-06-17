@@ -1,0 +1,7 @@
+Header Set Access-Control-Allow-Origin "*"
+
+RewriteEngine On
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^([^\.]+)$ $1.php [NC,L]
+
+ErrorDocument 404 /error/404.php
