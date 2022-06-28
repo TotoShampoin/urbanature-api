@@ -1,5 +1,5 @@
 <?php
-include "./secret/db.php";
+include "./.secret/db.php";
 
 $GEOPOSITION = "ST_Y(`geoposition`) AS `geopos.lat`, ST_X(`geoposition`) AS `geopos.lng`";
 
