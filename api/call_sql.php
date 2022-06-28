@@ -49,11 +49,12 @@ function nest_array(array $array) {
 }
 
 function get_closest_table($table) {
-    $tables = call_sql("SHOW TABLES FROM `urbanature`");
-    $distances = array_map(function($t) use ($table) {
+    $dbname = $GLOBALS["dbname"];
+    $tables = call_sql("SHOW TABLES FROM `$dbname`");
+    $distances = array_map(function($t) use ($table, $dbname) {
         return [
-            'table' => $t['Tables_in_urbanature'],
-            'distance' => levenshtein($t['Tables_in_urbanature'], $table),
+            'table' => $t["Tables_in_$dbname"],
+            'distance' => levenshtein($t["Tables_in_$dbname"], $table),
         ];
     }, $tables);
     return array_reduce($distances, function($a, $b) {
