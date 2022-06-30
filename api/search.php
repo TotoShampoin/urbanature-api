@@ -42,6 +42,7 @@ switch($table) {
             'id',
             'nom',
             'info.genre',
+            'meta.adresse',
         ];
         break;
     case 'arbres-remarquables':
@@ -49,6 +50,7 @@ switch($table) {
             'id',
             'nom',
             'info.genre',
+            'meta.adresse',
         ];
         break;
     case 'espaces-verts':
@@ -57,6 +59,7 @@ switch($table) {
             'nom',
             'info.categorie',
             'info.type',
+            'meta.adresse',
         ];
         break;
     case 'jardins-partages':
@@ -65,13 +68,16 @@ switch($table) {
             'nom',
             'info.type_ev',
             'info.type_jardin',
+            'meta.adresse',
         ];
         break;
     case 'textes':
         $rows = [
             'id',
-            'name',
+            'nom',
             'info.author',
+            'meta.img',
+            'meta.adresse',
         ];
         break;
 }
